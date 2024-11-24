@@ -17,3 +17,16 @@ A Node.js backend application for managing products, built using **Express.js** 
    ```bash
    git clone https://github.com/your-username/gdgc-backend-task.git
    cd gdgc-backend-task
+
+2. **Download the packages**  
+   ```bash
+   npm install
+
+---
+   
+## Endpoints
+- RESTful APIs for CRUD operations
+- MongoDB Atlas integration with Mongoose
+- Simple and scalable structure
+
+---
