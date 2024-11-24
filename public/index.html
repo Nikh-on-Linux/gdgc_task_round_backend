@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Api controller</title>
+</head>
+
+<body>
+  <main>
+    <h1>Api controller</h1>
+    <div>
+      <h2>Adding Item To List</h2>
+      <form action="/listing" id="ad">
+        <input type="text" name="title" id="adtitle" placeholder="Product Title">
+        <input type="text" name="description" id="ades" placeholder="Product Description">
+        <input type="text" name="seller" id="adseller" placeholder="Product Seller">
+        <input type="text" name="price" id="adprice" placeholder="Product Price">
+        <input type="submit" value="Add to list"></input>
+      </form>
+    </div>
+    <div>
+      <h2>Get All Items From List</h2>
+      <form action="/" id="gtallbutton">
+        <p id="fetchdata" ></p>
+        <input type="submit" value="Get all items"></input>
+      </form>
+    </div>
+    <div>
+      <h2>Get Specific Item</h2>
+      <form action="/" id="gtbutton">
+        <input type="text" name="id" id="gtsid" placeholder="Product Id">
+        <p>Available product id's</p>
+        <p class="productids"></p>
+        <p id="gtsp"></p>
+        <input type="submit" value="Get Specific Item"></input>
+      </form>
+    </div>
+    <div>
+      <h2>Delete Specific Item</h2>
+      <form action="/" id="delbutton">
+        <input type="text" name="id" id="delid" placeholder="Product Id">
+        <p>Available product id's</p>
+        <p class="productids"></p>
+        <p id="delp"></p>
+        <input type="submit" value="Delete Specific Item"></input>
+      </form>
+    </div>
+
+  </main>
+</body>
+<script src="./index.js"></script>
+
+</html>
