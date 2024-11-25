@@ -15,23 +15,28 @@ ad.addEventListener('submit', async (e) => {
   const adseller = document.querySelector("#adseller").value;
   const adprice = document.querySelector("#adprice").value;
 
-  const response = await fetch('/listing', {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      title: title,
-      description: des,
-      seller: adseller,
-      price: adprice
+  if (title && des && adseller && adprice && typeof(adprice) == Number) {
+    const response = await fetch('/listing', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title: title,
+        description: des,
+        seller: adseller,
+        price: adprice
+      })
     })
-  })
 
-  const data = await response.json();
-  ids.push(data.data.productId);
-  alert('Item added to the list');
-  updateUI()
+    const data = await response.json();
+    ids.push(data.data.productId);
+    alert('Item added to the list');
+    updateUI()
+  }
+  else {
+    alert("Provide all details and price should be a number");
+  }
 })
 
 function updateUI() {
@@ -59,24 +64,34 @@ gtallbutton.addEventListener('submit', async (e) => {
 gtbutton.addEventListener("submit", async (e) => {
   e.preventDefault();
   const id = document.querySelector('#gtsid').value;
-  const response = await fetch(`/listing/${id}`)
-  const data = await response.json();
-  console.log(data);
-  document.querySelector("#gtsp").innerHTML = "View console for response";
+  if (id) {
+    const response = await fetch(`/listing/${id}`)
+    const data = await response.json();
+    console.log(data);
+    document.querySelector("#gtsp").innerHTML = "View console for response";
+  }
+  else {
+    alert("Provide id");
+  }
 })
 
 delbutton.addEventListener("submit", async (e) => {
   e.preventDefault();
   const id = document.querySelector('#delid').value;
-  const response = await fetch(`/listing/${id}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      id: id
+  if (id) {
+    const response = await fetch(`/listing/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: id
+      })
     })
-  })
-  updateUI();
-  document.querySelector("#delp").innerHTML = "Item deleted successfully";
+    updateUI();
+    document.querySelector("#delp").innerHTML = "Item deleted successfully";
+  }
+  else{
+    alert("Provide Id");
+  }
 })
