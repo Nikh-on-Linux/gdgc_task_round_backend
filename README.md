@@ -25,8 +25,19 @@ A Node.js backend application for managing products, built using **Express.js** 
 ---
    
 ## Endpoints
-- RESTful APIs for CRUD operations
-- MongoDB Atlas integration with Mongoose
-- Simple and scalable structure
-
+- GET - Returns all the product list
+    ```bash
+  ./listing
+- GET - Returns the specific product item from the list
+  ```bash
+  ./listing/:id
+- POST - Creates new product item in the product list
+  ```bash
+  ./listing/
+- PUT - Updates product fields for a specific id
+  ```bash
+  ./listing/:id
+- DELETE - Deletes the product item from the product list
+  ```bash
+  ./listing/:id
 ---
