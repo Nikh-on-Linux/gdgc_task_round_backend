@@ -17,7 +17,7 @@ A Node.js backend application for managing products, built using **Express.js** 
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/your-username/gdgc-backend-task.git
+   git clone https://github.com/your-username/gdgc_task_round_backend.git
    cd gdgc-backend-task
 
 2. **Download the packages**  
